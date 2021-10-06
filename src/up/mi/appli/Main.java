@@ -1,10 +1,10 @@
 package up.mi.appli;
 
-import up.mi.jgm.maths.Complexe;
-import up.mi.td01.Tri;
+import up.mi.jgm.maths.*;
+import up.mi.td02.UtilMathPlus;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 //        System.out.println("1 + 2 + 3 = " + UtilMath.somme3(1, 2, 3));
 //        System.out.println("2^8 = " + UtilMath.power(2, 8));
 //        System.out.println("fact(5) = " + UtilMath.fact(5));
@@ -37,6 +37,10 @@ public class Main {
 //        for(int b : a) {
 //            System.out.print(b + ",");
 //        }
-        System.out.println(Complexe.class);
+        System.out.println(UtilMathPlus.powRationnel(new Rationnel(3, 5), 2));
+        Complexe a = new Complexe(2, 3);
+        Complexe c = new Complexe(4, 5);
+        System.out.println(UtilMathPlus.sommeComplexe(a, c)); // 2*4 - 3*5 = 6 + 8i
+        System.out.println(UtilMathPlus.produitComplexe(a, c)); // 2*5 - 3*4 = -7 + 22i
     }
 }
