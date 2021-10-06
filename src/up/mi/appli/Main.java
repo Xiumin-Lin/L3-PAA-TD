@@ -1,5 +1,6 @@
 package up.mi.appli;
 
+import up.mi.td02.Disque;
 import up.mi.td02.Point;
 
 public class Main {
@@ -37,14 +38,25 @@ public class Main {
 //            System.out.print(b + ",");
 //        }
 
+        // TD2 part a
 //        System.out.println(UtilMathPlus.powRationnel(new Rationnel(3, 5), 2));
 //        Complexe a = new Complexe(2, 3);
 //        Complexe c = new Complexe(4, 5);
 //        System.out.println(UtilMathPlus.sommeComplexe(a, c)); // 2*4 - 3*5 = 6 + 8i
 //        System.out.println(UtilMathPlus.produitComplexe(a, c)); // 2*5 - 3*4 = -7 + 22i
-        Point a = new Point(1,1);
-        Point b = new Point(1,4);
-        System.out.println(a.distance(b));
+
+        // TD2 part b
+        Point a = new Point(1, 1);
+        Point b = new Point(1, 4);
+        System.out.println("La distance de a & b est de : " + a.distance(b));
+        Disque d = new Disque(new Point(0, 0), 3);
+        System.out.println("Le disque contient le pt a ? : " + d.contains(a));
+        System.out.println("Le disque contient le pt b ? : " + d.contains(b));
+
+        Disque e = new Disque(new Point(0, 5), 1);
+        Disque e2 = new Disque(new Point(0, 5), 3);
+        System.out.println("Le disque d intersect le disque e ? : " + d.intersect(e));
+        System.out.println("Le disque d intersect le disque e2 ? : " + d.intersect(e2));
 
     }
 }
