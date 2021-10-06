@@ -11,6 +11,7 @@ public class Disque {
 
     /**
      * Verifie si un point est contenu dans le disque
+     *
      * @param p le point a tester
      * @return true si le point p est contenu dans le disque
      */
@@ -19,11 +20,26 @@ public class Disque {
     }
 
     /**
-     * Verifie si le disque intersecte avec le disque donnee
+     * Verifie si le disque intersecte avec le disque donne
+     *
      * @param d le disque a tester
      * @return true si il y a intersection sinon false
      */
     public boolean intersect(Disque d) {
         return this.center.distance(d.center) <= (this.rayon + d.rayon);
+    }
+
+    /**
+     * Translation du disque par un vecteur donne
+     *
+     * @param v le vecteur de la translation
+     */
+    public void translation(Vecteur v) {
+        this.center = this.center.translation(v);
+    }
+
+    @Override
+    public String toString() {
+        return "Disque{" + "center= " + center + ", rayon= " + rayon + '}';
     }
 }
