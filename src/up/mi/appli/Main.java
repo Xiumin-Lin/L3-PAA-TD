@@ -1,7 +1,6 @@
 package up.mi.appli;
 
-import up.mi.jgm.maths.*;
-import up.mi.td02.UtilMathPlus;
+import up.mi.td02.Point;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,10 +36,15 @@ public class Main {
 //        for(int b : a) {
 //            System.out.print(b + ",");
 //        }
-        System.out.println(UtilMathPlus.powRationnel(new Rationnel(3, 5), 2));
-        Complexe a = new Complexe(2, 3);
-        Complexe c = new Complexe(4, 5);
-        System.out.println(UtilMathPlus.sommeComplexe(a, c)); // 2*4 - 3*5 = 6 + 8i
-        System.out.println(UtilMathPlus.produitComplexe(a, c)); // 2*5 - 3*4 = -7 + 22i
+
+//        System.out.println(UtilMathPlus.powRationnel(new Rationnel(3, 5), 2));
+//        Complexe a = new Complexe(2, 3);
+//        Complexe c = new Complexe(4, 5);
+//        System.out.println(UtilMathPlus.sommeComplexe(a, c)); // 2*4 - 3*5 = 6 + 8i
+//        System.out.println(UtilMathPlus.produitComplexe(a, c)); // 2*5 - 3*4 = -7 + 22i
+        Point a = new Point(1,1);
+        Point b = new Point(1,4);
+        System.out.println(a.distance(b));
+
     }
 }
