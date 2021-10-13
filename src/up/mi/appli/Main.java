@@ -3,6 +3,7 @@ package up.mi.appli;
 import up.mi.td02.ex3.RPG;
 import up.mi.td02.ex5.Promotion;
 import up.mi.td02.ex5.Student;
+import up.mi.td02.ex5.UE;
 
 public class Main {
     public static void main(String[] args) {
@@ -85,5 +86,17 @@ public class Main {
 //        Student d = new Student("Danni");
 //        Student e = new Student("Ellie");
 //        Student f = new Student("Fanny");
+        promo.addStudent(a);
+        promo.addStudent(b);
+        promo.addStudent(c);
+//        promo.addStudent(d);
+//        promo.addStudent(e);
+//        promo.addStudent(f);
+        promo.addNoteCC(a, UE.PROG, 20);
+        promo.addNoteCC(b, UE.PROG, 15);
+        promo.addNoteCC(c, UE.PROG, 10);
+        promo.addNoteExam(a, UE.PROG, 18);
+        promo.addNoteExam(b, UE.PROG, 13);
+        promo.addNoteExam(c, UE.PROG, 8);
     }
 }

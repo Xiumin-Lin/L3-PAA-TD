@@ -20,4 +20,12 @@ public class Student {
         }
     }
 
+    public void addNoteCC(UE ue, double note) {
+        noteCC.put(ue, note);
+    }
+
+    public void addNoteExam(UE ue, double note) {
+        noteExam.put(ue, note);
+    }
+
 }
