@@ -1,4 +1,4 @@
-package up.mi.td02;
+package up.mi.td02.ex2;
 
 public class Vecteur {
     private Point start;

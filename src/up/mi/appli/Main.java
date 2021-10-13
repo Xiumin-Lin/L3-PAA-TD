@@ -1,8 +1,8 @@
 package up.mi.appli;
 
-import up.mi.td02.Disque;
-import up.mi.td02.Point;
-import up.mi.td02.Vecteur;
+import up.mi.td02.ex2.Disque;
+import up.mi.td02.ex2.Point;
+import up.mi.td02.ex2.Vecteur;
 
 public class Main {
     public static void main(String[] args) {

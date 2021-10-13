@@ -1,4 +1,4 @@
-package up.mi.td02;
+package up.mi.td02.ex1;
 
 import up.mi.jgm.maths.Complexe;
 import up.mi.jgm.maths.Rationnel;
