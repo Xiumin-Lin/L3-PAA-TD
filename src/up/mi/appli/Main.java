@@ -1,6 +1,8 @@
 package up.mi.appli;
 
 import up.mi.td02.ex3.RPG;
+import up.mi.td02.ex5.Promotion;
+import up.mi.td02.ex5.Student;
 
 public class Main {
     public static void main(String[] args) {
@@ -70,9 +72,18 @@ public class Main {
 //        System.out.println(d);
 
         // TD2 Exo 3
-        try {
-            RPG game = new RPG();
-            game.play();
-        } catch(Exception e) {System.out.println(e.getMessage());}
+//        try {
+//            RPG game = new RPG();
+//            game.play();
+//        } catch(Exception e) {System.out.println(e.getMessage());}
+        
+        // TD2 Exo 5
+        Promotion promo = new Promotion();
+        Student a = new Student("Annie");
+        Student b = new Student("Bobbi");
+        Student c = new Student("Conni");
+//        Student d = new Student("Danni");
+//        Student e = new Student("Ellie");
+//        Student f = new Student("Fanny");
     }
 }
