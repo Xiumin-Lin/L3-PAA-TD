@@ -1,8 +1,6 @@
 package up.mi.appli;
 
-import up.mi.td02.ex2.Disque;
-import up.mi.td02.ex2.Point;
-import up.mi.td02.ex2.Vecteur;
+import up.mi.td02.ex3.RPG;
 
 public class Main {
     public static void main(String[] args) {
@@ -47,28 +45,34 @@ public class Main {
 //        System.out.println(UtilMathPlus.produitComplexe(a, c)); // 2*5 - 3*4 = -7 + 22i
 
         // TD2 Exo 2
-        Point o = new Point(0, 0);
-        Point a = new Point(1, 1);
-        Point b = new Point(1, 4);
-        System.out.println("La distance de a & b est de : " + a.distance(b));
+//        Point o = new Point(0, 0);
+//        Point a = new Point(1, 1);
+//        Point b = new Point(1, 4);
+//        System.out.println("La distance de a & b est de : " + a.distance(b));
+//
+//        Disque d = new Disque(o, 3);
+//        System.out.println("Le disque contient le pt a ? : " + d.contains(a));
+//        System.out.println("Le disque contient le pt b ? : " + d.contains(b));
+//
+//        Disque e = new Disque(new Point(0, 5), 1);
+//        Disque e2 = new Disque(new Point(0, 5), 3);
+//        System.out.println("Le disque d intersect le disque e ? : " + d.intersect(e));
+//        System.out.println("Le disque d intersect le disque e2 ? : " + d.intersect(e2));
+//
+//        Vecteur v = new Vecteur(o, new Point(3, 3));
+//        Vecteur u = new Vecteur(new Point(-1, 0), new Point(2, 3));
+//        System.out.println("v is equals to u ? : " + v.equals(u));
+//
+//        Vecteur w = new Vecteur(new Point(3, 0), new Point(3, -2));
+//        System.out.println(a.translation(w)); // res = (1, -1)
+//
+//        d.translation(w);
+//        System.out.println(d);
 
-        Disque d = new Disque(o , 3);
-        System.out.println("Le disque contient le pt a ? : " + d.contains(a));
-        System.out.println("Le disque contient le pt b ? : " + d.contains(b));
-
-        Disque e = new Disque(new Point(0, 5), 1);
-        Disque e2 = new Disque(new Point(0, 5), 3);
-        System.out.println("Le disque d intersect le disque e ? : " + d.intersect(e));
-        System.out.println("Le disque d intersect le disque e2 ? : " + d.intersect(e2));
-
-        Vecteur v = new Vecteur(o, new Point(3, 3));
-        Vecteur u = new Vecteur(new Point(-1, 0), new Point(2, 3));
-        System.out.println("v is equals to u ? : " + v.equals(u));
-
-        Vecteur w = new Vecteur(new Point(3,0), new Point(3, -2));
-        System.out.println(a.translation(w)); // res = (1, -1)
-
-        d.translation(w);
-        System.out.println(d);
+        // TD2 Exo 3
+        try {
+            RPG game = new RPG();
+            game.play();
+        } catch(Exception e) {System.out.println(e.getMessage());}
     }
 }
