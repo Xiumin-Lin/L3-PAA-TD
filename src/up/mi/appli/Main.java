@@ -98,5 +98,6 @@ public class Main {
         promo.addNoteExam(a, UE.PROG, 18);
         promo.addNoteExam(b, UE.PROG, 13);
         promo.addNoteExam(c, UE.PROG, 8);
+        System.out.println(promo.showAllStudentMoyenne());
     }
 }

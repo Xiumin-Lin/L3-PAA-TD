@@ -28,4 +28,21 @@ public class Student {
         noteExam.put(ue, note);
     }
 
+    @Override
+    public String toString() {
+        return name + " (\n\tnoteCC: " + noteCC +
+                "\n\tnoteExam:" + noteExam + ")\n";
+    }
+
+    public String showMoyenne() {
+        StringBuilder moyenneUE = new StringBuilder();
+        for(UE ue : UE.values()) {
+            moyenneUE.append(ue.getLabel()).append("=");
+            if(noteCC.get(ue) == null || noteExam.get(ue) == null) moyenneUE.append("null");
+            else moyenneUE.append(Math.max(noteExam.get(ue), (noteCC.get(ue) + noteExam.get(ue)) / 2));
+            moyenneUE.append(", ");
+        }
+        moyenneUE.deleteCharAt(moyenneUE.lastIndexOf(","));
+        return name + " (moyenneUE: " + moyenneUE +  "),\n";
+    }
 }

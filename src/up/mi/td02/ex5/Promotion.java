@@ -21,4 +21,17 @@ public class Promotion {
         s.addNoteExam(ue, note);
     }
 
+    @Override
+    public String toString() {
+        return "Promotion (" +
+                "promo:\n" + promo + ')';
+    }
+
+    public String showAllStudentMoyenne(){
+        StringBuilder sb = new StringBuilder();
+        promo.forEach(student -> sb.append("\t").append(student.showMoyenne()));
+        sb.deleteCharAt(sb.lastIndexOf(","));
+        return "Promotion (" +
+                "promo:\n" + sb + ')';
+    }
 }
