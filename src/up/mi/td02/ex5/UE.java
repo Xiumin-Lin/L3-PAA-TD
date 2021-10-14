@@ -12,12 +12,16 @@ public enum UE {
     private String label;
     private int coeff;
 
-    private UE(String label, int coeff) {
+    UE(String label, int coeff) {
         this.label = label;
         this.coeff = coeff;
     }
 
     public String getLabel() {
         return label;
+    }
+
+    public int getCoeff() {
+        return coeff;
     }
 }
