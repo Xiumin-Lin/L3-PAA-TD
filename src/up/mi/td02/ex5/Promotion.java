@@ -21,6 +21,25 @@ public class Promotion {
         s.addNoteExam(ue, note);
     }
 
+    /**
+     * Return the overall average of a promotion.
+     * If no students have a marked UE yet, -1 is returned.
+     *
+     * @return the overall average or -1 if there are not marked UE
+     */
+    public double getOverallAverage() {
+        double sumPromoAverage = 0;
+        int cptStudent = 0;
+        for(Student student : promo) {
+            double oAverage = student.getOverallAverage();
+            if(oAverage >= 0) {
+                sumPromoAverage += student.getOverallAverage();
+                cptStudent++;
+            }
+        }
+        return (cptStudent > 0) ? sumPromoAverage / cptStudent : -1;
+    }
+
     @Override
     public String toString() {
         return "Promotion (" +

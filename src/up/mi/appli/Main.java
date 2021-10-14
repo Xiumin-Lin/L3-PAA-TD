@@ -101,5 +101,6 @@ public class Main {
         promo.addNoteExam(b, UE.ALGO, 3);
         promo.addNoteExam(c, UE.ALGO, 11);
         System.out.println(promo.showAllStudentAveragePerUE());
+        System.out.println("Promo Overall Average : " + promo.getOverallAverage());
     }
 }

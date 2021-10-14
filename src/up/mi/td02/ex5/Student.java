@@ -38,6 +38,25 @@ public class Student {
         else return ((noteCC.get(ue) + noteExam.get(ue)) * ue.getCoeff()) / 2;
     }
 
+    /**
+     * Return the overall average of a student.
+     * If the student has no UE marked yet, -1 is returned
+     *
+     * @return the overall average or -1 if there are not enough notes
+     */
+    public double getOverallAverage() {
+        int cptUE = 0;
+        double sumAverage = 0;
+        for(UE ue : UE.values()) {
+            double average = getUeAverage(ue);
+            if(average >= 0) { // average < 0 means that the UE does not yet have all the scores
+                sumAverage += average;
+                cptUE++;
+            }
+        }
+        return (cptUE > 0) ? sumAverage / cptUE : -1;
+    }
+
     @Override
     public String toString() {
         return name + " (\n\tnoteCC: " + noteCC +
