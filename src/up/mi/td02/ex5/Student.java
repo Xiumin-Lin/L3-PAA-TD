@@ -18,6 +18,10 @@ public class Student {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void addNoteCC(UE ue, double note) {
         noteCC.put(ue, note);
     }

@@ -102,5 +102,7 @@ public class Main {
         promo.addNoteExam(c, UE.ALGO, 11);
         System.out.println(promo.showAllStudentAveragePerUE());
         System.out.println("Promo Overall Average : " + promo.getOverallAverage());
+        System.out.print("Promo Valedictorian(s) : ");
+        promo.findValedictorian().forEach(student -> System.out.print(student.getName() + "; "));
     }
 }
