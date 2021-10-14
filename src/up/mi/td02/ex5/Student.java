@@ -35,7 +35,7 @@ public class Student {
      */
     public double getUeAverage(UE ue) {
         if(noteCC.get(ue) == null || noteExam.get(ue) == null) return -1;
-        else return ((noteCC.get(ue) + noteExam.get(ue)) * ue.getCoeff()) / 2;
+        else return Math.max(noteExam.get(ue), (noteCC.get(ue) + noteExam.get(ue)) * ue.getCoeff() / 2);
     }
 
     /**
@@ -74,7 +74,7 @@ public class Student {
         for(UE ue : UE.values()) {
             moyenneUE.append(ue.getLabel()).append("=");
             if(noteCC.get(ue) == null || noteExam.get(ue) == null) moyenneUE.append("null");
-            else moyenneUE.append(Math.max(noteExam.get(ue), getUeAverage(ue)));
+            else moyenneUE.append(getUeAverage(ue));
             moyenneUE.append(", ");
         }
         moyenneUE.deleteCharAt(moyenneUE.lastIndexOf(","));
