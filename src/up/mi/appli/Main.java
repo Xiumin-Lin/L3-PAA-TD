@@ -89,20 +89,21 @@ public class Main {
         promo.addStudent(b);
         promo.addStudent(c);
         promo.addNoteCC(a, UE.PROG, 20);
-        promo.addNoteCC(b, UE.PROG, 15);
+        promo.addNoteCC(b, UE.PROG, 13);
         promo.addNoteCC(c, UE.PROG, 10);
         promo.addNoteCC(a, UE.ALGO, 14);
-        promo.addNoteCC(b, UE.ALGO, 6);
+        promo.addNoteCC(b, UE.ALGO, 19);
         promo.addNoteCC(c, UE.ALGO, 9);
         promo.addNoteExam(a, UE.PROG, 18);
         promo.addNoteExam(b, UE.PROG, 13);
         promo.addNoteExam(c, UE.PROG, 8);
         promo.addNoteExam(a, UE.ALGO, 12);
-        promo.addNoteExam(b, UE.ALGO, 3);
+        promo.addNoteExam(b, UE.ALGO, 19);
         promo.addNoteExam(c, UE.ALGO, 11);
-        System.out.println(promo.showAllStudentAveragePerUE());
+        promo.showAllStudentAveragePerUE();
+        promo.showOverallAveragePerUE();
         System.out.println("Promo Overall Average : " + promo.getOverallAverage());
-        System.out.print("Promo Valedictorian(s) : ");
-        promo.findValedictorian().forEach(student -> System.out.print(student.getName() + "; "));
+        promo.showValedictorian();
+        promo.showValedictorianPerUE();
     }
 }
