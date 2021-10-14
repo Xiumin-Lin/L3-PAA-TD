@@ -27,9 +27,14 @@ public class Promotion {
                 "promo:\n" + promo + ')';
     }
 
-    public String showAllStudentMoyenne(){
+    /**
+     * Return all student averages per UE in a String.
+     *
+     * @return a string with all students averages per UE.
+     */
+    public String showAllStudentAveragePerUE() {
         StringBuilder sb = new StringBuilder();
-        promo.forEach(student -> sb.append("\t").append(student.showMoyenne()));
+        promo.forEach(student -> sb.append("\t").append(student.showAveragePerUE()));
         sb.deleteCharAt(sb.lastIndexOf(","));
         return "Promotion (" +
                 "promo:\n" + sb + ')';

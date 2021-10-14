@@ -1,6 +1,5 @@
 package up.mi.appli;
 
-import up.mi.td02.ex3.RPG;
 import up.mi.td02.ex5.Promotion;
 import up.mi.td02.ex5.Student;
 import up.mi.td02.ex5.UE;
@@ -77,7 +76,7 @@ public class Main {
 //            RPG game = new RPG();
 //            game.play();
 //        } catch(Exception e) {System.out.println(e.getMessage());}
-        
+
         // TD2 Exo 5
         Promotion promo = new Promotion();
         Student a = new Student("Annie");
@@ -89,15 +88,18 @@ public class Main {
         promo.addStudent(a);
         promo.addStudent(b);
         promo.addStudent(c);
-//        promo.addStudent(d);
-//        promo.addStudent(e);
-//        promo.addStudent(f);
         promo.addNoteCC(a, UE.PROG, 20);
         promo.addNoteCC(b, UE.PROG, 15);
         promo.addNoteCC(c, UE.PROG, 10);
+        promo.addNoteCC(a, UE.ALGO, 14);
+        promo.addNoteCC(b, UE.ALGO, 6);
+        promo.addNoteCC(c, UE.ALGO, 9);
         promo.addNoteExam(a, UE.PROG, 18);
         promo.addNoteExam(b, UE.PROG, 13);
         promo.addNoteExam(c, UE.PROG, 8);
-        System.out.println(promo.showAllStudentMoyenne());
+        promo.addNoteExam(a, UE.ALGO, 12);
+        promo.addNoteExam(b, UE.ALGO, 3);
+        promo.addNoteExam(c, UE.ALGO, 11);
+        System.out.println(promo.showAllStudentAveragePerUE());
     }
 }

@@ -3,8 +3,6 @@ package up.mi.td02.ex5;
 import java.util.HashMap;
 
 public class Student {
-    public static final String cc = "cc";
-    public static final String exam = "exam";
 
     private String name;
     private HashMap<UE, Double> noteCC;
@@ -28,21 +26,39 @@ public class Student {
         noteExam.put(ue, note);
     }
 
+    /**
+     * Return the average of a student in a UE.
+     * If the student does not yet have enough marks in the UE, -1 is returned.
+     *
+     * @param ue the UE whose average you want to have
+     * @return the average of a UE or -1 if there are not enough notes
+     */
+    public double getUeAverage(UE ue) {
+        if(noteCC.get(ue) == null || noteExam.get(ue) == null) return -1;
+        else return ((noteCC.get(ue) + noteExam.get(ue)) * ue.getCoeff()) / 2;
+    }
+
     @Override
     public String toString() {
         return name + " (\n\tnoteCC: " + noteCC +
                 "\n\tnoteExam:" + noteExam + ")\n";
     }
 
-    public String showMoyenne() {
+    /**
+     * Return all the student's averages per UE.<br>
+     * Ex : Ellie (moyenneUE: Algo=null, Prog=19.0, Maths=null, Reseau=null ),
+     *
+     * @return a string with all the student's averages per UE.
+     */
+    public String showAveragePerUE() {
         StringBuilder moyenneUE = new StringBuilder();
         for(UE ue : UE.values()) {
             moyenneUE.append(ue.getLabel()).append("=");
             if(noteCC.get(ue) == null || noteExam.get(ue) == null) moyenneUE.append("null");
-            else moyenneUE.append(Math.max(noteExam.get(ue), (noteCC.get(ue) + noteExam.get(ue)) / 2));
+            else moyenneUE.append(Math.max(noteExam.get(ue), getUeAverage(ue)));
             moyenneUE.append(", ");
         }
         moyenneUE.deleteCharAt(moyenneUE.lastIndexOf(","));
-        return name + " (moyenneUE: " + moyenneUE +  "),\n";
+        return name + " (moyenneUE: " + moyenneUE + "),\n";
     }
 }
