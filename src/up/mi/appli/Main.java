@@ -1,11 +1,9 @@
 package up.mi.appli;
 
-import up.mi.td02.ex5.Promotion;
-import up.mi.td02.ex5.Student;
-import up.mi.td02.ex5.UE;
+import up.mi.td02.ex6.RepertoireSimple;
 
 public class Main {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 //        System.out.println("1 + 2 + 3 = " + UtilMath.somme3(1, 2, 3));
 //        System.out.println("2^8 = " + UtilMath.power(2, 8));
 //        System.out.println("fact(5) = " + UtilMath.fact(5));
@@ -39,14 +37,14 @@ public class Main {
 //            System.out.print(b + ",");
 //        }
 
-        // TD2 Exo 1
+		// TD2 Exo 1
 //        System.out.println(UtilMathPlus.powRationnel(new Rationnel(3, 5), 2));
 //        Complexe a = new Complexe(2, 3);
 //        Complexe c = new Complexe(4, 5);
 //        System.out.println(UtilMathPlus.sommeComplexe(a, c)); // 2*4 - 3*5 = 6 + 8i
 //        System.out.println(UtilMathPlus.produitComplexe(a, c)); // 2*5 - 3*4 = -7 + 22i
 
-        // TD2 Exo 2
+		// TD2 Exo 2
 //        Point o = new Point(0, 0);
 //        Point a = new Point(1, 1);
 //        Point b = new Point(1, 4);
@@ -71,39 +69,49 @@ public class Main {
 //        d.translation(w);
 //        System.out.println(d);
 
-        // TD2 Exo 3
+		// TD2 Exo 3
 //        try {
 //            RPG game = new RPG();
 //            game.play();
 //        } catch(Exception e) {System.out.println(e.getMessage());}
 
-        // TD2 Exo 5
-        Promotion promo = new Promotion();
-        Student a = new Student("Annie");
-        Student b = new Student("Bobbi");
-        Student c = new Student("Conni");
+		// TD2 Exo 5
+//        Promotion promo = new Promotion();
+//        Student a = new Student("Annie");
+//        Student b = new Student("Bobbi");
+//        Student c = new Student("Conni");
 //        Student d = new Student("Danni");
 //        Student e = new Student("Ellie");
 //        Student f = new Student("Fanny");
-        promo.addStudent(a);
-        promo.addStudent(b);
-        promo.addStudent(c);
-        promo.addNoteCC(a, UE.PROG, 20);
-        promo.addNoteCC(b, UE.PROG, 13);
-        promo.addNoteCC(c, UE.PROG, 10);
-        promo.addNoteCC(a, UE.ALGO, 14);
-        promo.addNoteCC(b, UE.ALGO, 19);
-        promo.addNoteCC(c, UE.ALGO, 9);
-        promo.addNoteExam(a, UE.PROG, 18);
-        promo.addNoteExam(b, UE.PROG, 13);
-        promo.addNoteExam(c, UE.PROG, 8);
-        promo.addNoteExam(a, UE.ALGO, 12);
-        promo.addNoteExam(b, UE.ALGO, 19);
-        promo.addNoteExam(c, UE.ALGO, 11);
-        promo.showAllStudentAveragePerUE();
-        promo.showOverallAveragePerUE();
-        System.out.println("Promo Overall Average : " + promo.getOverallAverage());
-        promo.showValedictorian();
-        promo.showValedictorianPerUE();
-    }
+//        promo.addStudent(a);
+//        promo.addStudent(b);
+//        promo.addStudent(c);
+//        promo.addNoteCC(a, UE.PROG, 20);
+//        promo.addNoteCC(b, UE.PROG, 13);
+//        promo.addNoteCC(c, UE.PROG, 10);
+//        promo.addNoteCC(a, UE.ALGO, 14);
+//        promo.addNoteCC(b, UE.ALGO, 19);
+//        promo.addNoteCC(c, UE.ALGO, 9);
+//        promo.addNoteExam(a, UE.PROG, 18);
+//        promo.addNoteExam(b, UE.PROG, 13);
+//        promo.addNoteExam(c, UE.PROG, 8);
+//        promo.addNoteExam(a, UE.ALGO, 12);
+//        promo.addNoteExam(b, UE.ALGO, 19);
+//        promo.addNoteExam(c, UE.ALGO, 11);
+//        promo.showAllStudentAveragePerUE();
+//        promo.showOverallAveragePerUE();
+//        System.out.println("Promo Overall Average : " + promo.getOverallAverage());
+//        promo.showValedictorian();
+//        promo.showValedictorianPerUE();
+
+		// TD2 Exo 6
+		RepertoireSimple rep = new RepertoireSimple();
+		rep.addPersonne("John", "Lennon", "0123456789");
+		rep.addPersonne("Paul ", "McCartney", "0234567891");
+		rep.addPersonne("George", "Harrison ", "0345678912");
+		rep.addPersonne("Ringo", " S t a r r ", "0456789123");
+		System.out.println(rep.chercheNumero("John", "Lennon"));
+		System.out.println(rep.chercheNumero("Paul ", "McCartney"));
+		System.out.println(rep.chercheNumero(" Freddie ", "Mercury"));
+	}
 }
