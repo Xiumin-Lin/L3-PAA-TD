@@ -1,6 +1,7 @@
 package up.mi.td02.ex6;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RepertoireSimple {
 	private ArrayList<Personne> repertoire;
@@ -18,5 +19,9 @@ public class RepertoireSimple {
 			if(p.getFirstname().equals(firstname) && p.getLastname().equals(lastname)) return p.getTelNumber();
 		}
 		return "L'identite " + firstname + " " + lastname + " est inconnue.";
+	}
+
+	public List<Personne> getRepertoire() {
+		return new ArrayList<>(repertoire);
 	}
 }

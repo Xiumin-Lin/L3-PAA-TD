@@ -22,4 +22,11 @@ public class Personne {
 	public String getTelNumber() {
 		return telNumber;
 	}
+
+	@Override
+	public String toString() {
+		return firstname + " " + lastname + " : " + telNumber;
+	}
+
+
 }
