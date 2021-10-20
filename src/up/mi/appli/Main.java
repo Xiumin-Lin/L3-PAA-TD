@@ -1,9 +1,9 @@
 package up.mi.appli;
 
-import up.mi.td02.ex7.T9;
-
-import java.util.ArrayList;
-import java.util.HashMap;
+import up.mi.td02.ex2.Point;
+import up.mi.td02.ex2.Vecteur;
+import up.mi.td03.ex2.Disque;
+import up.mi.td03.ex2.Losange;
 
 public class Main {
 	public static void main(String[] args) {
@@ -118,14 +118,22 @@ public class Main {
 //		System.out.println(rep.chercheNumero(" Freddie ", "Mercury"));
 
 		// TD2 Exo 7
-		HashMap<String, ArrayList<String>> dico = new HashMap<>();
-		System.out.println(T9.stringInT9("bonjour"));
-		T9.enregistrer(dico, "bonjour");
-		T9.enregistrer(dico, "bonne");
-		T9.enregistrer(dico, "comme");
-		System.out.println(T9.recuperer(dico, "26663"));
-		System.out.println(T9.recuperer(dico, "2665687"));
-		System.out.println(T9.recuperer(dico, "123456"));
+//		HashMap<String, ArrayList<String>> dico = new HashMap<>();
+//		System.out.println(T9.stringInT9("bonjour"));
+//		T9.enregistrer(dico, "bonjour");
+//		T9.enregistrer(dico, "bonne");
+//		T9.enregistrer(dico, "comme");
+//		System.out.println(T9.recuperer(dico, "26663"));
+//		System.out.println(T9.recuperer(dico, "2665687"));
+//		System.out.println(T9.recuperer(dico, "123456"));
 
+		// TD3 Exo 2
+		Disque d = new Disque(new Point(3.5, 4), 4);
+		Losange l = new Losange(new Point(0, 0), new Point(2, 0), new Point(2, 2), new Point(0, 2));
+		System.out.println(d);
+		System.out.println(l);
+		Vecteur v = new Vecteur(new Point(2, 2), new Point(3, 3));
+		System.out.println(d.translation(v));
+		System.out.println(l.translation(v));
 	}
 }
