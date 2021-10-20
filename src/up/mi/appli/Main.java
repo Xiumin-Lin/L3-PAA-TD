@@ -1,6 +1,9 @@
 package up.mi.appli;
 
-import up.mi.td02.ex6.RepertoireSimple;
+import up.mi.td02.ex7.T9;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
 	public static void main(String[] args) {
@@ -105,13 +108,24 @@ public class Main {
 //        promo.showValedictorianPerUE();
 
 		// TD2 Exo 6
-		RepertoireSimple rep = new RepertoireSimple();
-		rep.addPersonne("John", "Lennon", "0123456789");
-		rep.addPersonne("Paul ", "McCartney", "0234567891");
-		rep.addPersonne("George", "Harrison ", "0345678912");
-		rep.addPersonne("Ringo", " S t a r r ", "0456789123");
-		System.out.println(rep.chercheNumero("John", "Lennon"));
-		System.out.println(rep.chercheNumero("Paul ", "McCartney"));
-		System.out.println(rep.chercheNumero(" Freddie ", "Mercury"));
+//		RepertoireSimple rep = new RepertoireSimple();
+//		rep.addPersonne("John", "Lennon", "0123456789");
+//		rep.addPersonne("Paul ", "McCartney", "0234567891");
+//		rep.addPersonne("George", "Harrison ", "0345678912");
+//		rep.addPersonne("Ringo", " S t a r r ", "0456789123");
+//		System.out.println(rep.chercheNumero("John", "Lennon"));
+//		System.out.println(rep.chercheNumero("Paul ", "McCartney"));
+//		System.out.println(rep.chercheNumero(" Freddie ", "Mercury"));
+
+		// TD2 Exo 7
+		HashMap<String, ArrayList<String>> dico = new HashMap<>();
+		System.out.println(T9.stringInT9("bonjour"));
+		T9.enregistrer(dico, "bonjour");
+		T9.enregistrer(dico, "bonne");
+		T9.enregistrer(dico, "comme");
+		System.out.println(T9.recuperer(dico, "26663"));
+		System.out.println(T9.recuperer(dico, "2665687"));
+		System.out.println(T9.recuperer(dico, "123456"));
+
 	}
 }
