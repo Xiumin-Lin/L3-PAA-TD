@@ -293,6 +293,10 @@ public class UtilMath {
         }
         return sb.toString();
     }
+
+    public static double round2Decimal(double d){
+        return Math.round(d * 100) / 100.0;
+    }
 }
 
 

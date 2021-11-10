@@ -1,9 +1,6 @@
 package up.mi.appli;
 
-import up.mi.td03.ex5.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import up.mi.td03.ex6.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -163,7 +160,7 @@ public class Main {
 		System.out.println(aMedoc);*/
 
 		// TD3 Exo 5
-		List<ProgrammeTV> grilleDeProgTV = new ArrayList<>();
+		/*List<ProgrammeTV> grilleDeProgTV = new ArrayList<>();
 		grilleDeProgTV.add(new JournalTV("Jack Pera", 8, 9));
 		grilleDeProgTV.add(new EmissionDivertissement("Hahaha", 9, "Amy Sant"));
 		grilleDeProgTV.add(new Fiction("Brooklyn 99", 11, 16,
@@ -174,6 +171,34 @@ public class Main {
 				"Dan Goor & Michael Schur", true));
 		for(ProgrammeTV program : grilleDeProgTV) {
 			System.out.println(program);
-		}
+		}*/
+
+		// TD3 Exo 6
+		// (3.5 + 5.7) * (3.2 - (5.0 / 2.0)) = (a + b) * (c - (d / e))
+		Valeur a = new Valeur(3.5);
+		Valeur b = new Valeur(5.7);
+		Valeur c = new Valeur(3.2);
+		Valeur d = new Valeur(5);
+		Valeur e = new Valeur(2);
+		Somme ab = new Somme(a, b);
+		Division de = new Division(d, e);
+		Soustraction cde = new Soustraction(c, de);
+		Multiplication abcde = new Multiplication(ab, cde);
+		System.out.println("(3.5 + 5.7) = " + ab.evaluer());
+		System.out.println("(5.0 / 2.0) = " + de.evaluer());
+		System.out.println("(3.2 - (5.0 / 2.0)) = " + cde.evaluer());
+		System.out.println("(3.5 + 5.7) * (3.2 - (5.0 / 2.0)) = " + abcde.evaluer());
+
+		// 5.0 * 2.0 * (3.5 + 5.7 + 3.2) = d * e * (a + b + c)
+		AdditionNAire abc = new AdditionNAire();
+		abc.ajouterOperateur(a);
+		abc.ajouterOperateur(b);
+		abc.ajouterOperateur(c);
+		MultiplicationNAire deabc = new MultiplicationNAire();
+		deabc.ajouterOperateur(d);
+		deabc.ajouterOperateur(e);
+		deabc.ajouterOperateur(abc);
+		System.out.println("5.0 * 2.0 * (3.5 + 5.7 + 3.2) = " + deabc.evaluer());
+
 	}
 }
