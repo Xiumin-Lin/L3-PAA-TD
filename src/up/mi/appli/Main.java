@@ -1,7 +1,9 @@
 package up.mi.appli;
 
-import up.mi.td02.ex6.Personne;
-import up.mi.td03.ex3.RepertoireAmeliore;
+import up.mi.td03.ex4.DVD;
+import up.mi.td03.ex4.Fruit;
+import up.mi.td03.ex4.Livre;
+import up.mi.td03.ex4.Medicament;
 
 public class Main {
 	public static void main(String[] args) {
@@ -136,7 +138,7 @@ public class Main {
 		System.out.println(l.translation(v));*/
 
 		// TD3 Exo 3
-		RepertoireAmeliore rep = new RepertoireAmeliore(
+		/*RepertoireAmeliore rep = new RepertoireAmeliore(
 				new Personne("Jimi", "Hendrix", "0987654321"));
 		rep.addPersonne("Jhon", "Lennon", "0123456789");
 		rep.addPersonne("Paul", "McCartney", "0234567891");
@@ -148,6 +150,17 @@ public class Main {
 		System.out.println(rep.chercheNumero("Freddie", "Mercury"));
 		System.out.println(rep.cherchePersonne("0234567891"));
 		System.out.println(rep.cherchePersonne("0234567899"));
-		System.out.println(rep);
+		System.out.println(rep);*/
+
+		// TD3 Exo 4
+		DVD aDVD = new DVD("The Good Place", 20, "Michael Schur");
+		Livre aBook = new Livre("Dune", 10, "Frank Herbert","2-221-02602-0");
+		Fruit aFruit = new Fruit("Pomme", 1, "France");
+		Medicament aMedoc = new Medicament("Doliprane 1000mg", 2, "Sanofi", 8);
+		System.out.println(aDVD);
+		System.out.println(aBook);
+		System.out.println(aFruit);
+		System.out.println(aMedoc);
+
 	}
 }
