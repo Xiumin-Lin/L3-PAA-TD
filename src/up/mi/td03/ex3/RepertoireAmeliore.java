@@ -25,7 +25,7 @@ public class RepertoireAmeliore extends RepertoireSimple {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		List<Personne> cloneRep = getRepertoire();
-		cloneRep.sort(Comparator.comparing(o -> (o.getFirstname() + " " + o.getLastname())));
+		cloneRep.sort(Comparator.comparing(o -> (o.getLastname() + " " + o.getFirstname())));
 		for(Personne p : cloneRep)
 			sb.append(p.toString()).append('\n');
 		return "Proprietaire : " + owner + '\n' + sb.toString();
