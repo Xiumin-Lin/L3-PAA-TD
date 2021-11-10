@@ -1,9 +1,9 @@
 package up.mi.appli;
 
-import up.mi.td03.ex4.DVD;
-import up.mi.td03.ex4.Fruit;
-import up.mi.td03.ex4.Livre;
-import up.mi.td03.ex4.Medicament;
+import up.mi.td03.ex5.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
@@ -153,14 +153,27 @@ public class Main {
 		System.out.println(rep);*/
 
 		// TD3 Exo 4
-		DVD aDVD = new DVD("The Good Place", 20, "Michael Schur");
-		Livre aBook = new Livre("Dune", 10, "Frank Herbert","2-221-02602-0");
+		/*DVD aDVD = new DVD("The Good Place", 20, "Michael Schur");
+		Livre aBook = new Livre("Dune", 10, "Frank Herbert", "2-221-02602-0");
 		Fruit aFruit = new Fruit("Pomme", 1, "France");
 		Medicament aMedoc = new Medicament("Doliprane 1000mg", 2, "Sanofi", 8);
 		System.out.println(aDVD);
 		System.out.println(aBook);
 		System.out.println(aFruit);
-		System.out.println(aMedoc);
+		System.out.println(aMedoc);*/
 
+		// TD3 Exo 5
+		List<ProgrammeTV> grilleDeProgTV = new ArrayList<>();
+		grilleDeProgTV.add(new JournalTV("Jack Pera", 8, 9));
+		grilleDeProgTV.add(new EmissionDivertissement("Hahaha", 9, "Amy Sant"));
+		grilleDeProgTV.add(new Fiction("Brooklyn 99", 11, 16,
+				"Dan Goor & Michael Schur", false));
+		grilleDeProgTV.add(new Reportage("Les Chats", 16, 20, ThemeTV.CULTURE));
+		grilleDeProgTV.add(new JournalTV("Raymond Hol", 20, 21));
+		grilleDeProgTV.add(new Fiction("Brooklyn 99", 21, 8,
+				"Dan Goor & Michael Schur", true));
+		for(ProgrammeTV program : grilleDeProgTV) {
+			System.out.println(program);
+		}
 	}
 }

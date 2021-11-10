@@ -16,7 +16,7 @@ public abstract class Produit {
 		this.tva = t;
 	}
 
-	public double getPrixTTC() {
+	public final double getPrixTTC() {
 		double pTTC = prixHT * (1 + tva.getTaux());
 		return Math.round(pTTC * 100) / 100.0; // prix arrondi a 2 decimal près
 	}
