@@ -47,7 +47,7 @@ public class Td04 {
 					if(args.length != 1)
 						throw new Exception("Nombre d'argument incorrect, verifie qu'il y a bien 1 seul nom de fichier.");
 					System.out.print("Affiche la taille d'un fichier en octet :\n\t");
-					UnixCMD.du_h(args[0]);
+					UnixCMD.duH(args[0]);
 					break;
 				case 2:
 					if(args.length != 2)

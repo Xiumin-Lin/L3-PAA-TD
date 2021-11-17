@@ -10,7 +10,7 @@ public class UnixCMD {
 	 * @param fileDestName  the destination file
 	 */
 	public static void cp(String fileStartName, String fileDestName) {
-		String line = "";
+		String line;
 		try(
 				FileReader fStart = new FileReader(fileStartName);
 				BufferedReader bR = new BufferedReader(fStart);
@@ -31,9 +31,8 @@ public class UnixCMD {
 	 * Display the size in bytes of the file given in parameter
 	 *
 	 * @param fileName the file's name
-	 * @throws FileNotFoundException if not found
 	 */
-	public static void du_h(String fileName) {
+	public static void duH(String fileName) {
 		File f = new File(fileName);
 		if(f.exists())
 			System.out.println("Le fichier " + fileName + " a une taille de " + f.length() + " octets.");
