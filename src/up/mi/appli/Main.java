@@ -14,6 +14,6 @@ public class Main {
 		/*Td03.runTd();*/
 
 		// TD4
-		Td04.runTd();
+		Td04.runTd(args);
 	}
 }

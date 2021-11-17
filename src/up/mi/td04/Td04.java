@@ -1,10 +1,14 @@
 package up.mi.td04;
 
 import up.mi.td01.UtilMath;
+import up.mi.td04.ex2and3.UnixCMD;
+
+import java.util.Scanner;
 
 public class Td04 {
-	public static void runTd() {
-		runEx1();
+	public static void runTd(String[] args) {
+//		runEx1();
+		runEx2And3(args);
 	}
 
 	private static void runEx1() {
@@ -24,5 +28,45 @@ public class Td04 {
 			System.out.println(e.getMessage());
 		}
 		UtilMath.showMathInterface();
+	}
+
+	private static void runEx2And3(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int choice = -1;
+		try {
+			System.out.println("Choix :");
+			System.out.println("1. du -h file");
+			System.out.println("2. cp file1 file2");
+			System.out.println("3. grep file str");
+			System.out.println("4. wc file");
+			System.out.println("0. exit");
+			System.out.print(">>>");
+			choice = sc.nextInt();
+			switch(choice) {
+				case 1:
+					if(args.length != 1)
+						throw new Exception("Nombre d'argument incorrect, verifie qu'il y a bien 1 seul nom de fichier.");
+					System.out.print("Affiche la taille d'un fichier en octet :\n\t");
+					UnixCMD.du_h(args[0]);
+					break;
+				case 2:
+					if(args.length != 2)
+						throw new Exception("Nombre d'argument incorrect, verifie qu'il y a bien 2 noms de fichier.");
+					System.out.println("Copie le fichier " + args[0] + " dans le fichier " + args[1]);
+					UnixCMD.cp(args[0], args[1]);
+					break;
+				case 3:
+					break;
+				case 0:
+					System.out.println("Exit !");
+					break;
+				default:
+					throw new IllegalArgumentException("Choix invalide !");
+			}
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		sc.close();
+		System.out.println("Fin du programme !");
 	}
 }
