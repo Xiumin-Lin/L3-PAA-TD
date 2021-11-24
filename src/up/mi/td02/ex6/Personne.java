@@ -5,7 +5,7 @@ public class Personne {
 	private String lastname;
 	private String telNumber;
 
-	public Personne(String firstname, String lastname, String tel){
+	public Personne(String firstname, String lastname, String tel) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.telNumber = tel;
@@ -21,6 +21,10 @@ public class Personne {
 
 	public String getTelNumber() {
 		return telNumber;
+	}
+
+	public String getPersonneDataForSave() {
+		return firstname + "," + lastname + "," + telNumber;
 	}
 
 	@Override

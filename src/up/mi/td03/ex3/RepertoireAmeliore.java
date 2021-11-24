@@ -7,6 +7,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class RepertoireAmeliore extends RepertoireSimple {
+	public static final String PROPRIO = "proprietaire";
+	public static final String CONTACT = "contact";
+
 	private Personne owner;
 
 	public RepertoireAmeliore(Personne p) {
@@ -14,11 +17,25 @@ public class RepertoireAmeliore extends RepertoireSimple {
 		this.owner = p;
 	}
 
-	public String cherchePersonne(String tel) {
+	public Personne getOwner() {
+		return owner;
+	}
 
-		for(Personne p : getRepertoire())
+	public String cherchePersonne(String tel) {
+		if(this.owner.getTelNumber().equals(tel)) return owner.getFirstname() + " " + owner.getLastname();
+		for(Personne p : getRepertoire()) {
 			if(p.getTelNumber().equals(tel)) return p.getFirstname() + " " + p.getLastname();
-		return "Le numero " + tel + "n'appartient a personne.";
+		}
+		return "Le numero " + tel + " n'appartient a personne.";
+	}
+
+	public String getStringForSave() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(PROPRIO + "(").append(this.owner.getPersonneDataForSave()).append(")\n");
+		for(Personne p : this.getRepertoire()) {
+			sb.append(CONTACT + "(").append(p.getPersonneDataForSave()).append(")\n");
+		}
+		return sb.toString();
 	}
 
 	@Override
