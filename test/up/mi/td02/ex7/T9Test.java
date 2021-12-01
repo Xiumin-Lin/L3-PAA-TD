@@ -1,18 +1,43 @@
 package up.mi.td02.ex7;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 class T9Test {
-	HashMap<String, ArrayList<String>> dico;
+	private HashMap<String, ArrayList<String>> dico;
+	private static HashMap<String, ArrayList<String>> dico2;
+	private static HashMap<String, ArrayList<String>> dicoTest;
+
+	@BeforeAll
+	static void init() {
+		dico2 = new HashMap<>();
+		T9.enregistrer(dico2, "bonne");
+		T9.enregistrer(dico2, "comme");
+		dicoTest = new HashMap<>();
+		T9.enregistrer(dicoTest, "bonjour");
+		T9.enregistrer(dicoTest, "bonne");
+		T9.enregistrer(dicoTest, "comme");
+	}
 
 	@BeforeEach
 	void setUp() {
 		dico = new HashMap<>();
+	}
+
+	@Test
+	void initTest() {
+		List<String> l = new ArrayList<>();
+		l.add("bonne");
+		l.add("comme");
+		Assertions.assertIterableEquals(l, dico2.get("26663"));
 	}
 
 	@Test
@@ -40,6 +65,7 @@ class T9Test {
 	void enregistrer() {
 		T9.enregistrer(dico, "bonjour");
 		Assertions.assertEquals(1, dico.size());
+		Assertions.assertTrue(dico.containsKey(T9.stringInT9("bonjour")));
 
 		String str2 = "bonne";
 		T9.enregistrer(dico, str2);
@@ -53,17 +79,21 @@ class T9Test {
 
 	@Test
 	void recuperer() {
-		T9.enregistrer(dico, "bonjour");
-		Assertions.assertEquals(1, T9.recuperer(dico, "2665687").size());
-		Assertions.assertEquals("bonjour", T9.recuperer(dico, "2665687").get(0));
+		Assertions.assertEquals(1, T9.recuperer(dicoTest, "2665687").size());
+		Assertions.assertEquals("bonjour", T9.recuperer(dicoTest, "2665687").get(0));
 
 		// string with same T9 string
-		T9.enregistrer(dico, "bonne");
-		T9.enregistrer(dico, "comme");
-		Assertions.assertEquals(2, T9.recuperer(dico, "26663").size());
-		Assertions.assertEquals("comme", T9.recuperer(dico, "26663").get(1));
+		Assertions.assertEquals(2, T9.recuperer(dico2, "26663").size());
+		Assertions.assertEquals("comme", T9.recuperer(dico2, "26663").get(1));
 
 		// unknown string
 		Assertions.assertTrue(T9.recuperer(dico, "123").isEmpty());
+	}
+
+	@ParameterizedTest
+	@CsvSource({"bonjour, 2665687", "comme, 26663", "bonne, 26663"})
+	void recupWithParameter(String str, String strInT9) {
+		Assertions.assertTrue(dicoTest.containsKey(strInT9));
+		Assertions.assertTrue(dicoTest.get(strInT9).contains(str));
 	}
 }
