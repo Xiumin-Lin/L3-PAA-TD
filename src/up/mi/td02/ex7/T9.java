@@ -2,6 +2,8 @@ package up.mi.td02.ex7;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class T9 {
 	public static byte getChiffreT9(char c) {
@@ -53,7 +55,7 @@ public class T9 {
 		return res.toString();
 	}
 
-	public static void enregistrer(HashMap<String, ArrayList<String>> dico, String chaineT9) {
+	public static void enregistrer(Map<String, ArrayList<String>> dico, String chaineT9) {
 		if(dico != null) {
 			String key = T9.stringInT9(chaineT9);
 			if(!dico.containsKey(key)) {
@@ -64,7 +66,7 @@ public class T9 {
 		}
 	}
 
-	public static ArrayList<String> recuperer(HashMap<String, ArrayList<String>> dico, String chaineT9) {
+	public static List<String> recuperer(Map<String, ArrayList<String>> dico, String chaineT9) {
 		return dico.getOrDefault(chaineT9, new ArrayList<>());
 	}
 
