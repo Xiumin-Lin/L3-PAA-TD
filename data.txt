@@ -1,0 +1,4 @@
+proprietaire(Amy,YMA,0123456789)
+contact(Boo,OOB,0987654321)
+contact(Cow,WOC,0912345678)
+
